@@ -1,0 +1,172 @@
+/* Feature Section Start */
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Adjusts buttons to stack on smaller screens */
+}
+
+.filter-bar button {
+    padding: 10px 20px;
+    background-color: #6c63ff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.filter-bar button:hover {
+    background-color: #574b90;
+}
+
+.gallery .heading {
+    padding: 3rem;
+    margin-top: 7rem;
+}
+
+.media-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.media-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.media-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.media-item:hover {
+    transform: translateY(-10px);
+}
+
+.media-item:hover img {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.lightbox button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.lightbox button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 9px;
+    background-color: #cbd5e1;
+    color: #1b2f23;
+    font-size: 10px;
+    text-decoration: none;
+    border: 0.5px solid #333;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #e4bbe1;
+    border-color: #888;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .filter-bar button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .gallery .heading {
+        padding: 2rem;
+        margin-top: 7rem;
+    }
+
+    .media-container {
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .media-item {
+        border-radius: 10px;
+    }
+
+    .lightbox img {
+        max-width: 90%;
+        max-height: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-bar button {
+        padding: 6px 12px;
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+
+    .media-container {
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .media-item {
+        border-radius: 8px;
+    }
+
+    .lightbox img {
+        max-width: 95%;
+        max-height: 60%;
+    }
+    .back-button {
+        display: none;
+    }
+}

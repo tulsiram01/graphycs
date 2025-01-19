@@ -1,0 +1,212 @@
+
+/* section start */
+.birthday .heading {
+    padding: 3rem;
+    margin-top: 7rem;
+}
+.birthday .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
+    gap: 1.5rem;
+}
+
+.birthday .box-container .box{
+    padding: 1rem 1rem;
+    background: #fff;
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+    box-shadow: var(--black);
+}
+
+.birthday .box-container .box:hover{
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.birthday .box-container .box img{
+    margin: 1rem 0;
+    width: 100%;
+    height: auto;
+}
+
+.birthday .box-container .box h3{
+    font-size: 2.5rem;
+    line-height: 1.8;
+    color: var(--light-color);
+}
+.birthday .box-container .box p{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #777;
+    text-align: left;
+}
+
+.back {
+    margin: 10px 0;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff; /* Blue background */
+    color: #ffffff;           /* White text */
+    text-decoration: none;    /* Remove underline */
+    border-radius: 5px;       /* Rounded corners */
+    font-size: 14px;          /* Adjust font size */
+    font-weight: bold;        /* Make text bold */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05);    /* Slightly enlarge on hover */
+}
+
+.back-button:active {
+    background-color: #003f7f; /* Even darker blue on click */
+    transform: scale(0.95);    /* Slightly shrink on click */
+}
+
+
+.image-preview {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.image-preview.active {
+    display: flex;
+}
+
+.image-preview img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.image-preview .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+.image-preview .close-button:hover {
+    background: #333;
+    color: #fff;
+}
+
+.icons {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.icon {
+    text-decoration: none;
+    font-size: 24px;
+    color: #25D366; /* WhatsApp green color */
+}
+.icon i {
+    transition: transform 0.2s;
+}
+.icon:hover i {
+    transform: scale(1.2);
+}
+.icon:nth-child(2) i {
+    color: #007BFF; /* Call icon blue color */
+    
+}
+/* Button styling */
+.view-more-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 8px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2563eb, #b31dd8); /* Blue gradient */
+    border: none;
+    border-radius: 50px; /* Rounded button */
+    text-transform: uppercase; /* Uppercase text */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.view-more-btn:hover {
+    background: linear-gradient(135deg, #2563eb, #d81d81); /* Darker gradient on hover */
+    transform: translateY(-3px) scale(1.05); /* Slight lift on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+.view-more-btn:active {
+    transform: scale(0.95); /* Button press effect */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+}
+/* For tablets (screen width 768px and below) */
+@media (max-width: 768px) {
+    .card {
+        width: 70%; /* Adjust width for smaller screens */
+        max-width: 300px;
+    }
+
+    .image-preview img {
+        max-width: 95%; /* Reduce max size for smaller screens */
+    }
+}
+
+/* For mobile phones (screen width 480px and below) */
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* Full-width cards for mobile */
+    }
+
+    .image-preview img {
+        max-width: 90%; /* Slightly smaller image previews */
+    }
+
+    .image-preview .close-button {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem; /* Smaller close button */
+    }
+    .back {
+        position:absolute;
+        top: 13%; /* Vertically centers the container */
+    }
+} 
+@media(max-width:500px){
+    .birthday .box-container .box img{
+        margin: 1rem 0;
+        width: 100%;
+        height: 80%;
+    }
+    .birthday .box-container .box{
+        max-height: fit-content;
+        gap: 0.5rem;
+    }
+    .back-button {
+        display: none;
+    }
+}

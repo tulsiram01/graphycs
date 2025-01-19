@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&display=swap');
+
+:root {
+    --clr1: rgb(21, 12, 104);
+    --clr2: rgb(236, 68, 90);
+    --clr3: #fff;
+    --clr4: #000;
+    --clr5: lightgray;
+    --clr6: yellow;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: 'PT Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 56%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+section h3 {
+    font-size: 3rem;
+    color: var(--clr2);
+    text-transform: none;
+    text-align: center;
+    letter-spacing: .2rem;
+}
+
+section p {
+    color: var(--clr3);
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    line-height: 2.5rem;
+    justify-content: flex-start;
+}
+
+section h4 {
+    margin: 0 0 1rem 30rem;
+    width: 40%;
+    font-size: 4rem;
+    color: var(--clr3);
+    text-transform: uppercase;
+    text-align: center;
+    align-items: center;
+    letter-spacing: .2rem;
+    background: var(--clr1);
+}
+
+.title {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: .2rem;
+    margin-top: 4rem;
+}
+
+.title span {
+    color: rgb(53 167 156);
+    font-size: 4rem;
+}
+
+/*-------------------services--------------*/
+
+.service {
+    margin-top: 8rem;
+    background-color: whitesmoke;
+}
+
+.services-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.services-col {
+    height: 37rem;
+    background: url("back-2.png");
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+    flex: 1 1 25rem;
+    padding: 1.2rem;
+    margin: 1.5rem;
+    text-align: center;
+}
+
+.services-col i {
+    padding: 2.2rem;
+    border: none;
+    background: aliceblue;
+    color: rgb(53 167 156);
+    border-radius: 5rem;
+    font-size: 3rem;
+}
+.services-col i:hover{
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.services-col h2 {
+    padding: 1rem 0;
+    font-size: 2.5rem;
+    color: #000;
+}
+
+.services-col p {
+    font-size: 1.5rem;
+    color: #777;
+}
+
+
