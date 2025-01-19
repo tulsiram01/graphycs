@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Birthday-card</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+        <link rel="stylesheet" href="style/heading.css">
+        <link rel="stylesheet" href="style/gallery.css">
+    </head>
+    <body>
+        <!-- Header section start -->
+        <header class="header">
+            <a href="index.html" class="logo">
+                <img src="images/logo1.png" alt="Pramod Printers">
+            </a>
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="card-design.html">Card-Design</a>
+                <a href="categories.html">Categories</a>
+                <!-- <a href="Services.html">Services</a> -->
+                <a href="gallery.html">Gallery</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">contact-us</a>
+            </nav>
+            <div class="icons">
+                <div class="fas fa-search" id="search-btn"></div>
+                <div class="fas fa-bars" id="menu-btn"></div> 
+            </div>    
+            <form action class="search-form">
+                <input type="search" id="search-box"
+                    placeholder="search here...">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+        </header>    
+
+        <!-- <!features section start..> -->
+        <section class="gallery" id="gallery">
+            <h1 class="heading"><span>Gallery</span></h1>
+            <div class="back">
+                <a href="javascript:void(0)" onclick="history.back()" class="back-button">Back</a>
+            </div>
+            <div class="filter-bar">
+                <button onclick="filterMedia('all')">All</button>
+                <button onclick="filterMedia('Sadi')">Sadi-Cards</button>
+                <button onclick="filterMedia('Birthday')">Birthday-card</button>
+                <button onclick="filterMedia('Flex')">Flex</button>
+                <button onclick="filterMedia('visiting')">Visiting-card</button>
+            </div>  
+            <div class="media-container">
+                <!-- Example media items -->
+                <div class="media-item" data-category="Sadi">
+                    <img src="Card/16.jpeg" alt="Sadi Card" onclick="openLightbox('Card/16.jpeg')">
+                </div>
+                <div class="media-item" data-category="Birthday">
+                    <img src="Card/10.jpeg" alt="Birthday Card" onclick="openLightbox('Card/10.jpeg')">
+                </div>
+                <div class="media-item" data-category="Flex">
+                    <img src="Card/1.jpeg" alt="Flex" onclick="openLightbox('Card/1.jpeg')">
+                </div>
+                <div class="media-item" data-category="Sadi">
+                    <img src="Card/16.jpeg" alt="Sadi Card" onclick="openLightbox('Card/16.jpeg')">
+                </div>
+                <div class="media-item" data-category="Birthday">
+                    <img src="Card/10.jpeg" alt="Birthday Card" onclick="openLightbox('Card/10.jpeg')">
+                </div>
+                <div class="media-item" data-category="Flex">
+                    <img src="Card/1.jpeg" alt="Flex" onclick="openLightbox('Card/1.jpeg')">
+                </div>
+                <div class="media-item" data-category="Sadi">
+                    <img src="Card/16.jpeg" alt="Sadi Card" onclick="openLightbox('Card/16.jpeg')">
+                </div>
+                <div class="media-item" data-category="Birthday">
+                    <img src="Card/10.jpeg" alt="Birthday Card" onclick="openLightbox('Card/10.jpeg')">
+                </div>
+                <div class="media-item" data-category="Flex">
+                    <img src="Card/1.jpeg" alt="Flex" onclick="openLightbox('Card/1.jpeg')">
+                </div>
+                <div class="media-item" data-category="Sadi">
+                    <img src="Card/16.jpeg" alt="Sadi Card" onclick="openLightbox('Card/16.jpeg')">
+                </div>
+                <div class="media-item" data-category="Birthday">
+                    <img src="Card/10.jpeg" alt="Birthday Card" onclick="openLightbox('Card/10.jpeg')">
+                </div>
+                <div class="media-item" data-category="Flex">
+                    <img src="Card/1.jpeg" alt="Flex" onclick="openLightbox('Card/1.jpeg')">
+                </div>
+                <div class="media-item" data-category="Sadi">
+                    <img src="Card/16.jpeg" alt="Sadi Card" onclick="openLightbox('Card/16.jpeg')">
+                </div>
+                <div class="media-item" data-category="Birthday">
+                    <img src="Card/10.jpeg" alt="Birthday Card" onclick="openLightbox('Card/10.jpeg')">
+                </div>
+                <div class="media-item" data-category="Flex">
+                    <img src="Card/1.jpeg" alt="Flex" onclick="openLightbox('Card/1.jpeg')">
+                </div>
+                <div class="media-item" data-category="Sadi">
+                    <img src="Card/16.jpeg" alt="Sadi Card" onclick="openLightbox('Card/16.jpeg')">
+                </div>
+                <div class="media-item" data-category="Birthday">
+                    <img src="Card/10.jpeg" alt="Birthday Card" onclick="openLightbox('Card/10.jpeg')">
+                </div>
+                <div class="media-item" data-category="Flex">
+                    <img src="Card/1.jpeg" alt="Flex" onclick="openLightbox('Card/1.jpeg')">
+                </div>
+                <div class="media-item" data-category="Sadi">
+                    <img src="Card/16.jpeg" alt="Sadi Card" onclick="openLightbox('Card/16.jpeg')">
+                </div>
+                <div class="media-item" data-category="Birthday">
+                    <img src="Card/10.jpeg" alt="Birthday Card" onclick="openLightbox('Card/10.jpeg')">
+                </div>
+                <div class="media-item" data-category="Flex">
+                    <img src="Card/1.jpeg" alt="Flex" onclick="openLightbox('Card/1.jpeg')">
+                </div>
+                
+            </div>
+            
+            <div id="lightbox" class="lightbox">
+                <img id="lightbox-image" class="lightbox-media">
+                <button onclick="closeLightbox()">Close</button>
+            </div>
+        </section>
+        <!-- <!features section Ends..> -->
+        <div class="image-preview" id="imagePreview">
+            <img id="previewImage" src="" alt="Preview">
+            <button class="close-button" id="closeButton">&times;</button>
+        </div> 
+        <section class="footer">
+            <div class="box-container">
+                <div class="box">
+                    <h3>Pramod Printers</h3>
+                    <p>Pramod Printers is a skilled graphic designer with over 10 years of experience in creating visually captivating designs. From print to digital, we offer expert design services to bring your ideas to life.</p>
+                    <div class="share">
+                        <a href="https://facebook.com/Tulsiram chandravasshi" class="fab fa-facebook-f"></a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="https://instagram.com/mr_tulsi_ram" class="fab fa-instagram"></a>
+                        <a href="https://wa.me/916268757307" class="fab fa-whatsapp"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h3>contact info</h3>
+                    <a href="tel:+916268757307"> <i class="fas fa-phone"></i>+916268757307</a>
+                    <a href="tel:+916268757307"> <i class="fas fa-phone"></i>+916268757307</a>
+                    <a href="mailto:tulsiramchandravanshi@gmail.com" class="links"> <i class="fas fa-envelope"></i>tulsiramchandravanshi@gmail.com</a>
+                    <a href="https://maps.app.goo.gl/KvBxWEjmfYHr7QJW8" target="_blank" class="links">  <i class="fas fa-map-marker-alt"></i>chhattisgarh,
+                        kawardha-491995</a>
+                </div>
+            </div>
+            <div class="lightbox" id="lightbox">
+                <span class="close-btn" onclick="closeLightbox()">&times;</span>
+                <div class="lightbox-content">
+                    <img id="lightbox-image" style="display: none;">
+                    <video id="lightbox-video" controls style="display: none;"></video>
+                </div>
+            </div>
+        
+        </section>
+        <div class="copyright ">
+            <p>Copyright &copy; 2024 Design By Tulsiram Chandravanshi</p>
+        </div>
+        <script>
+            document.querySelectorAll('.img').forEach(image => {
+                image.addEventListener('click', (e) => {
+                    const preview = document.getElementById('imagePreview');
+                    const previewImage = document.getElementById('previewImage');
+                    previewImage.src = e.target.src;
+                    preview.classList.add('active');
+                });
+            });
+            
+            document.getElementById('closeButton').addEventListener('click', () => {
+                const preview = document.getElementById('imagePreview');
+                preview.classList.remove('active');
+            }); 
+
+            //categories
+            function filterMedia(category) {
+                const mediaItems = document.querySelectorAll('.media-item');
+                mediaItems.forEach(item => {
+                    const itemType = item.dataset.type; // Get the media type (image or video)
+            
+                    if (category === 'all' || item.dataset.category === category || (category === 'image' && itemType === 'image')) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+            
+            function openLightbox(src, type) {
+                const lightbox = document.getElementById('lightbox');
+                const image = document.getElementById('lightbox-image');
+                const video = document.getElementById('lightbox-video');
+            
+                if (type === 'image') {
+                    image.src = src;
+                    image.style.display = 'block';
+                    video.style.display = 'none';
+                } else if (type === 'video') {
+                    video.src = src;
+                    video.style.display = 'block';
+                    image.style.display = 'none';
+                }
+            
+                lightbox.classList.add('active');
+            }
+            
+            function closeLightbox() {
+                const lightbox = document.getElementById('lightbox');
+                const image = document.getElementById('lightbox-image');
+                const video = document.getElementById('lightbox-video');
+            
+                lightbox.classList.remove('active');
+                image.src = '';
+                video.pause();
+                video.src = '';
+            }            
+        </script>
+        <script src="js/main.js"></script>
+    </body>    
+</html>
