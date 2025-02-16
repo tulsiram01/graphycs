@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Invitation Card</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="style/heading.css">
+    <link rel="stylesheet" href="style/new1.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="images/logo1.png" alt="Pramod Printers">
+        </a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="card-design.html">Card-Design</a>
+            <a href="categories.html">Categories</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About Us</a>
+            <a href="blog.html">Blog</a>
+        </nav>
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+    </header>
+   
+    <div class="container">
+        <div class="back">
+            <a href="javascript:history.back()" class="back-button"> Back</a>
+        </div>
+        <div class="product-image">
+            <img src="Card/sadi-card (20).jpg" alt="Premium Invitation Card">
+        </div>
+        <div class="product-details">
+            <div class="product-title">Premium Quality Single Invitation Card with Cover</div>
+            <div class="product-price" id="product-price">₹20</div>
+            <div class="product-description">This elegant invitation card is crafted with premium materials and a modern design, perfect for weddings, parties, or any special event.</div>
+            <div class="info-section">
+                <h2>Details</h2>
+                <p><strong>Software:</strong> CorelDraw</p>
+                <p><strong>Version:</strong> Corel X3, X4, X5, X6, X7 to 2024 and Above</p>
+                <p><strong>Font:</strong> Yes</p>
+                <p><strong>Editable:</strong> Fully</p>
+                <p><strong>Note:</strong> This design is only for the Printers and Designers.</p>
+            </div>
+            <div class="button-container">
+                <!-- <button class="button add-to-cart">Add to Cart</button> -->
+                <button class="button buy" onclick="initiatePayment('product-price')">Buy</button>
+            </div> 
+            <div id="download-section" style="display: none; margin-top: 20px;">
+                <p>Thank you for your purchase! Click the link below to download your product:</p>
+                <a href="download/tulsi.pdf" id="download-link" download class="button">Download</a>
+            </div>
+            <div class="product-description">Categories: Single Invitation cards, Theme Cards</div>
+            <div class="help-buttons">
+                 <a href="https://wa.me/6268757307" class="help-button">
+                    <img src="Card/whatsapp.png" alt="WhatsApp" /> CHAT
+                 </a>
+                 <!-- <a href="tel:+1234567890" class="help-button">
+                    <img src="Card/call-up.png" alt="Call" /> CALL
+                  </a> -->
+                  <a href="mailto:example@example.com" class="help-button">
+                    <img src="Card/email.png" alt="E-mail" /> E-MAIL
+                  </a>
+                  <a href="#" class="help-button" id="share-button">
+                    <img src="Card/share.png" alt="Share" /> SHARE
+                  </a>                  
+              </div>
+            <!-- <div class="note">Note: Printing and shipping charges will be extra. Refer to T&C.</div> -->
+        </div>
+    </div>
+    <div class="related-section">
+        <h2>Related Items</h2>
+        <div class="related-item">
+            <img src="images/coreldraw.png" alt="CorelDraw" />
+            <p>CorelDraw Design Tutorials</p>
+            <a href="#" class="view-more">View More</a>
+        </div>
+        <div class="related-item">
+            <img src="images/fonts.png" alt="Fonts" />
+            <p>Top Fonts for CorelDraw</p>
+            <a href="#" class="view-more">View More</a>
+        </div>
+        <div class="related-item">
+            <img src="images/editable.png" alt="Editable Templates" />
+            <p>Editable CorelDraw Templates</p>
+            <a href="#" class="view-more">View More</a>
+        </div>
+    </div>
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Pramod Printers</h3>
+                <p>Pramod Printers is a skilled graphic designer with over 10 years of experience in creating visually captivating designs. From print to digital, we offer expert design services to bring your ideas to life.</p>
+                <div class="share">
+                    <a href="https://facebook.com/Tulsiram chandravasshi" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="https://instagram.com/mr_tulsi_ram" class="fab fa-instagram"></a>
+                    <a href="https://wa.me/916268757307" class="fab fa-whatsapp"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Gat In Touch</h3>
+                <a href="tel:+916268757307"> <i class="fas fa-phone"></i>+916268757307</a>
+                <a href="tel:+916268757307"> <i class="fas fa-phone"></i>+916268757307</a>
+                <a href="mailto:tulsiramchandravanshi@gmail.com" class="links"> <i class="fas fa-envelope"></i>tulsiramchandravanshi@gmail.com</a>
+                <a href="https://maps.app.goo.gl/KvBxWEjmfYHr7QJW8" target="_blank" class="links">  <i class="fas fa-map-marker-alt"></i>chhattisgarh,
+                    kawardha-491995</a>
+            </div>
+        </div>
+    </section>
+    <div class="copyright ">
+        <p>&copy; 2025 Pramod Printers. All rights reserved.</p>
+    </div>
+    <script>
+        let navBar=document.querySelector('.navbar');
+        document.querySelector('#menu-btn').onclick=()=>{
+            navBar.classList.toggle('active');
+            searchForm.classList.remove('active');  
+        }
+
+        function toggleNavbar() {
+        const navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('active');
+        }
+
+
+        window.onscroll=()=>{
+        navBar.classList.remove('active');
+        searchForm.classList.remove('active');
+
+        }
+
+    </script>   
+    <script src="js/pay.js"></script>           
+</body>
+</html>

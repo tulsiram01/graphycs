@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Explore the timeless charm of traditional wedding invitation cards. Learn about their cultural significance, exquisite craftsmanship, and lasting appeal.">
+        <title>The Timeless Traditional Wedding Invitation Cards</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="style/heading.css">
+    <link rel="stylesheet" href="style/blog1.css">
+    </head>
+    <body>
+      <header class="header">
+        <a href="index.html" class="logo"> 
+            <img src="images/logo1.png" alt="Pramod Printers">
+        </a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="card-design.html">Card-Design</a>
+            <a href="categories.html">Categories</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About Us</a>
+            <a href="blog.html">Blog</a>
+        </nav>
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+      </header>
+        <div class="container">
+            <div class="back">
+                <a href="javascript:void(0)" onclick="history.back()" class="back-button">Back</a>
+            </div>
+            
+            <h1>The Timeless Traditional Wedding Invitation Cards</h1>
+            <div class="images">
+                <div class="card">
+                    <img src="Card/18.jpg" alt>
+                    <h3>Cover page</h3>  
+                </div>
+                <div class="card">
+                    <img src="Card/13.jpeg" alt>
+                    <h3>First page</h3>
+                </div>
+                <div class="card">
+                    <img src="Card/13.jpeg" alt>
+                    <h3>Second page</h3>
+                </div>
+            </div>
+            <div class="image-preview" id="imagePreview">
+                <img id="previewImage" src="" alt="Preview">
+                <button class="close-button" id="closeButton">&times;</button>
+            </div>
+            <h2>Moments</h2>
+            <p>Wedding invitations are more than just a way to share the details
+                of your big day—they set the tone and style for your
+                celebration. In today's digital age, where e-invites are gaining
+                popularity, traditional wedding invitation cards still hold a
+                special place in our hearts and culture. Here's why these
+                timeless pieces continue to be a preferred choice for many
+                couples.</p>
+            <div class="slider-container">
+                <div id="slides" class="slides">
+                    <div class="slide"><img src="Card/13.jpeg" alt="Slide 1"></div>
+                    <div class="slide"><img src="images/sadi.jpg" alt="Slide 2"></div>
+                    <div class="slide"><img src="images/banner-graphic-1.webp" alt="Slide 3"></div>
+                    <div class="slide"><img src="images/benner.jpg" alt="Slide 4"></div>
+                </div>
+                <button id="prev" class="nav-btn">❮</button>
+                <button id="next" class="nav-btn">❯</button>
+                <div class="dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                </div>
+            </div>
+            <h2>Cultural Significance</h2>
+            <p>Traditional wedding invitations are often deeply rooted in
+                cultural practices and beliefs. Whether it's a Hindu wedding
+                card adorned with images of Lord Ganesha, a Christian wedding
+                invitation featuring intricate floral patterns, or a Muslim card
+                showcasing elegant calligraphy, each design reflects the
+                couple's heritage and traditions.</p>
+            <h2>A Personal Touch</h2>
+            <p>Unlike digital invitations, traditional cards are tangible
+                keepsakes. The act of holding a beautifully designed card in
+                hand evokes a sense of intimacy and thoughtfulness. Sending out
+                physical invitations also allows families to personally connect
+                with their guests, often accompanied by a warm invitation
+                extended in person.</p>
+            <h2>Symbolism in Design</h2>
+            <p>Each element of a traditional wedding invitation holds meaning.
+                For example:</p>
+            <ul>
+                <li><strong>Colors</strong>: Red and gold symbolize prosperity
+                    and happiness in many cultures.</li>
+                <li><strong>Motifs</strong>: Peacock feathers, floral patterns,
+                    and traditional symbols like kalash (pot) or bells reflect
+                    auspiciousness.</li>
+                <li><strong>Fonts</strong>: Classic calligraphy adds a regal
+                    touch to the invitation.</li>
+            </ul>
+            <h2>Eco-Friendly Options</h2>
+            <p>Modern printing techniques have introduced eco-friendly
+                traditional invitations made from recycled paper or seed paper,
+                which can be planted after use. This blend of tradition and
+                sustainability appeals to environmentally conscious couples.</p>
+            <h2>Customization Trends</h2>
+            <p>While sticking to traditional themes, couples today are opting
+                for personalized elements in their wedding invitations.
+                Monograms, custom illustrations, and heartfelt messages make
+                each card unique and reflective of their love story.
+            </p>
+           <h2>Recommended Post</h2>
+           <div class="post">
+            <ul>
+                <li><a href="#">Morden Invitation Card</a></li>
+                <li><a href="#">Birthday Invitation Card</a></li>
+                <li> <a href="#">Trending Invitation Card</a></li>
+            </ul>
+           </div>
+           <div class="social">
+            <h2>Follow Other Social Media </h2>
+            <div class="share">
+                <a href="https://facebook.com/Tulsiram chandravasshi" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="https://instagram.com/mr_tulsi_ram" class="fab fa-instagram"></a>
+                <a href="https://wa.me/916268757307" class="fab fa-whatsapp"></a>
+            </div>
+       </div>
+        </div>
+        <script>
+        // slider
+        const slides = document.getElementById('slides');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+        let currentIndex = 0;
+        function showSlide(index) {
+            const slideWidth = slides.children[0].clientWidth;
+            slides.style.transform = `translateX(${-index * slideWidth}px)`;
+        }
+
+        function autoSlide() {
+            currentIndex = (currentIndex + 1) % slides.children.length;
+            showSlide(currentIndex);
+        }
+
+        let autoSlideInterval = setInterval(autoSlide, 3000);
+
+        prev.addEventListener('click', () => {
+            clearInterval(autoSlideInterval);
+            currentIndex = (currentIndex === 0) ? slides.children.length - 1 : currentIndex - 1;
+            showSlide(currentIndex);
+            autoSlideInterval = setInterval(autoSlide, 3000);
+        });
+
+        next.addEventListener('click', () => {
+            clearInterval(autoSlideInterval);
+            currentIndex = (currentIndex === slides.children.length - 1) ? 0 : currentIndex + 1;
+            showSlide(currentIndex);
+            autoSlideInterval = setInterval(autoSlide, 8000);
+        });
+
+        //Image preview
+        document.querySelectorAll('.card img').forEach(image => {
+            image.addEventListener('click', (e) => {
+                const preview = document.getElementById('imagePreview');
+                const previewImage = document.getElementById('previewImage');
+                previewImage.src = e.target.src;
+                preview.classList.add('active');
+            });
+        });
+        document.getElementById('closeButton').addEventListener('click', () => {
+            const preview = document.getElementById('imagePreview');
+            preview.classList.remove('active');
+        });     
+        
+        //navbar
+        let navBar=document.querySelector('.navbar');
+        document.querySelector('#menu-btn').onclick=()=>{
+        navBar.classList.toggle('active');
+        }
+        function toggleNavbar() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+          }
+          window.onscroll=()=>{
+            navBar.classList.remove('active');
+          }  
+    </script>
+    </body>
+</html>

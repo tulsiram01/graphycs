@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="style/heading.css">
+    <link rel="stylesheet" href="style/cart.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="images/logo1.png" alt="Pramod Printers">
+        </a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="card-design.html">Card-Design</a>
+            <a href="categories.html">Categories</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About Us</a>
+            <a href="blog.html">Blog</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Your Cart</h1>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-summary">
+            <h2>Total: ₹<span id="cart-total">0</span></h2>
+            <button class="checkout-button" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to display cart items
+        function loadCart() {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+
+            cartContainer.innerHTML = '';
+            let total = 0;
+
+            cartItems.forEach((item, index) => {
+                total += item.price;
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <h3>${item.title}</h3>
+                        <p>Price: ₹${item.price}</p>
+                        <button onclick="removeFromCart(${index})" class="remove-button">Remove</button>
+                    </div>
+                `;
+                cartContainer.appendChild(itemDiv);
+            });
+
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(index) {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            cartItems.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            loadCart();
+        }
+
+        // Checkout function (dummy implementation)
+        function checkout() {
+            alert('Proceeding to payment...');
+            localStorage.removeItem('cart');
+            loadCart();
+        }
+
+        // Load cart on page load
+        window.onload = loadCart;
+    </script>
+</body>
+</html>

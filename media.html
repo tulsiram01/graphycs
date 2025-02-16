@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixed Media Gallery</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            color: #333;
+        }
+        .back-button {
+            margin-top: 1.5rem;
+            left: 1rem;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 9px;
+            background-color:#cbd5e1;
+            color: #1b2f23;
+            font-size: 10px;
+            text-decoration: none;
+            border: 0.5px solid #333;
+            cursor: pointer;
+        }
+        
+        .back-button:hover {
+            background-color: #e4bbe1;
+            border-color: #888;
+        }
+        .gallery-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .filter-bar button {
+            padding: 10px 20px;
+            background-color: #6c63ff;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .filter-bar button:hover {
+            background-color: #574b90;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .media-item {
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            background: #fff;
+        }
+        .media-item:hover {
+            transform: scale(1.05);
+        }
+        .media-item img, .media-item video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .media-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .media-info h4 {
+            margin: 0 0 5px;
+            font-size: 16px;
+            color: #444;
+        }
+        .media-info p {
+            font-size: 14px;
+            color: #777;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox-content img, .lightbox-content video {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+        .lightbox .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="back">
+        <a href="javascript:history.back()" class="back-button"> Back</a>
+    </div>
+
+    <div class="gallery-container">
+        <div class="filter-bar">
+            <button onclick="filterMedia('all')">All</button>
+            <button onclick="filterMedia('images')">Images</button>
+            <button onclick="filterMedia('videos')">Videos</button>
+        </div>
+
+        <div class="media-grid">
+            <div class="media-item" data-category="images">
+                <img src="image1.jpg" alt="Beautiful Scenery">
+                <div class="media-info">
+                    <h4>Beautiful Scenery</h4>
+                    <p>Nature at its best</p>
+                </div>
+            </div>
+
+            <div class="media-item" data-category="videos">
+                <video src="video1.mp4" muted></video>
+                <div class="media-info">
+                    <h4>Adventure Travel</h4>
+                    <p>Thrilling experiences</p>
+                    <button onclick="openLightbox('video1.mp4', 'video')">Play</button>
+                </div>
+            </div>
+
+            <div class="media-item" data-category="images">
+                <img src="image2.jpg" alt="City Lights">
+                <div class="media-info">
+                    <h4>City Lights</h4>
+                    <p>Urban landscapes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-image" style="display: none;">
+            <video id="lightbox-video" controls style="display: none;"></video>
+        </div>
+    </div>
+
+    <script>
+        function filterMedia(category) {
+            const mediaItems = document.querySelectorAll('.media-item');
+            mediaItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function openLightbox(src, type) {
+            const lightbox = document.getElementById('lightbox');
+            const image = document.getElementById('lightbox-image');
+            const video = document.getElementById('lightbox-video');
+
+            if (type === 'image') {
+                image.src = src;
+                image.style.display = 'block';
+                video.style.display = 'none';
+            } else if (type === 'video') {
+                video.src = src;
+                video.style.display = 'block';
+                image.style.display = 'none';
+            }
+
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const image = document.getElementById('lightbox-image');
+            const video = document.getElementById('lightbox-video');
+
+            lightbox.classList.remove('active');
+            image.src = '';
+            video.pause();
+            video.src = '';
+        }
+    </script>
+</body>
+</html>
